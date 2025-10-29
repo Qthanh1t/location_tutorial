@@ -1,0 +1,9 @@
+version: "3.9"
+
+services:
+  app:
+    build: .
+    container_name: ord-tutorial-app
+    ports:
+      - "4062:6081"
+    restart: always
