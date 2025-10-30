@@ -59,3 +59,1369 @@
 2025-10-30 09:24:24.118 [http-nio-6081-exec-10] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 866 ms
 2025-10-30 09:41:11.713 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Shutdown initiated...
 2025-10-30 09:41:11.717 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Shutdown completed.
+2025-10-30 09:48:23.366 [main] INFO  c.ord.tutorial.TutorialApplication - Starting TutorialApplication using Java 21.0.8 with PID 7084 (D:\java_ord\location_tutorial\target\classes started by Admin in D:\java_ord\location_tutorial)
+2025-10-30 09:48:23.372 [main] INFO  c.ord.tutorial.TutorialApplication - No active profile set, falling back to 1 default profile: "default"
+2025-10-30 09:48:27.181 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-30 09:48:27.182 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-30 09:48:27.535 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-30 09:48:27.894 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Starting...
+2025-10-30 09:48:29.214 [main] ERROR o.s.b.w.e.tomcat.TomcatStarter - Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'jwtAuthenticationFilter' defined in file [D:\java_ord\location_tutorial\target\classes\com\ord\core\security\jwt\JwtAuthenticationFilter.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'customUserDetailsService' defined in file [D:\java_ord\location_tutorial\target\classes\com\ord\tutorial\service\CustomUserDetailsService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.ord.tutorial.repository.UserRepository defined in @EnableJpaRepositories declared on DatabaseConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+2025-10-30 09:48:29.289 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-10-30 09:48:29.297 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2025-10-30 09:48:29.361 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:170)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.ord.tutorial.TutorialApplication.main(TutorialApplication.java:10)
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:147)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:107)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:517)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:219)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:193)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:167)
+	... 8 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtAuthenticationFilter' defined in file [D:\java_ord\location_tutorial\target\classes\com\ord\core\security\jwt\JwtAuthenticationFilter.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'customUserDetailsService' defined in file [D:\java_ord\location_tutorial\target\classes\com\ord\tutorial\service\CustomUserDetailsService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.ord.tutorial.repository.UserRepository defined in @EnableJpaRepositories declared on DatabaseConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1395)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1232)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:230)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:184)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:179)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:164)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:96)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:271)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:245)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:52)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4464)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:773)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:203)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:412)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:870)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:438)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:128)
+	... 13 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'customUserDetailsService' defined in file [D:\java_ord\location_tutorial\target\classes\com\ord\tutorial\service\CustomUserDetailsService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.ord.tutorial.repository.UserRepository defined in @EnableJpaRepositories declared on DatabaseConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1395)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1232)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1760)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1643)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 54 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository' defined in com.ord.tutorial.repository.UserRepository defined in @EnableJpaRepositories declared on DatabaseConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1725)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1474)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:606)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1698)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1643)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 68 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jpaSharedEM_entityManagerFactory': Cannot resolve reference to bean 'entityManagerFactory' while setting constructor argument
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:691)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
+	... 81 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.DatabaseException: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
+	... 93 common frames omitted
+Caused by: liquibase.exception.LiquibaseException: liquibase.exception.DatabaseException: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:288)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822)
+	... 102 common frames omitted
+Caused by: liquibase.exception.DatabaseException: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at liquibase.integration.spring.SpringLiquibase.lambda$afterPropertiesSet$0(SpringLiquibase.java:280)
+	at liquibase.Scope.lambda$child$0(Scope.java:201)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:271)
+	... 104 common frames omitted
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:165)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:55)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:839)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:415)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:370)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:207)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111)
+	at liquibase.integration.spring.SpringLiquibase.lambda$afterPropertiesSet$0(SpringLiquibase.java:275)
+	... 109 common frames omitted
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:52)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:95)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:140)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:156)
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:592)
+	at com.mysql.cj.protocol.a.NativeProtocol.readServerCapabilities(NativeProtocol.java:516)
+	at com.mysql.cj.protocol.a.NativeProtocol.beforeHandshake(NativeProtocol.java:411)
+	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1331)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:155)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:963)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	... 120 common frames omitted
+Caused by: java.io.EOFException: Can not read response from server. Expected to read 4 bytes, read 0 bytes before connection was unexpectedly lost.
+	at com.mysql.cj.protocol.FullReadInputStream.readFully(FullReadInputStream.java:58)
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeaderLocal(SimplePacketReader.java:72)
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:54)
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:36)
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:586)
+	... 126 common frames omitted
+2025-10-30 09:49:31.303 [main] INFO  c.o.t.TutorialApplicationTests - Starting TutorialApplicationTests using Java 21.0.8 with PID 12936 (started by Admin in D:\java_ord\location_tutorial)
+2025-10-30 09:49:31.306 [main] INFO  c.o.t.TutorialApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-10-30 09:49:34.055 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Starting...
+2025-10-30 09:49:34.495 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPoolTutorial - Added connection com.mysql.cj.jdbc.ConnectionImpl@43a7203e
+2025-10-30 09:49:34.516 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Start completed.
+2025-10-30 09:49:35.537 [main] INFO  liquibase.changelog - Creating database history table with name: location_db.DATABASECHANGELOG
+2025-10-30 09:49:35.939 [main] INFO  liquibase.changelog - Reading from location_db.DATABASECHANGELOG
+2025-10-30 09:49:36.375 [main] INFO  liquibase.snapshot - Creating snapshot
+2025-10-30 09:49:36.758 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+2025-10-30 09:49:36.761 [main] INFO  liquibase.command - Using deploymentId: 1792574018
+2025-10-30 09:49:36.766 [main] INFO  liquibase.changelog - Reading from location_db.DATABASECHANGELOG
+2025-10-30 09:49:36.821 [main] INFO  liquibase.ui - Running Changeset: db/changelog/db.changelog-master.xml::1-create-provinces::you
+2025-10-30 09:49:37.022 [main] INFO  liquibase.changelog - Table provinces created
+2025-10-30 09:49:37.025 [main] INFO  liquibase.changelog - ChangeSet db/changelog/db.changelog-master.xml::1-create-provinces::you ran successfully in 201ms
+2025-10-30 09:49:37.056 [main] INFO  liquibase.ui - Running Changeset: db/changelog/db.changelog-master.xml::2-create-wards::you
+2025-10-30 09:49:37.269 [main] INFO  liquibase.changelog - Table wards created
+2025-10-30 09:49:37.629 [main] INFO  liquibase.changelog - Foreign key constraint added to wards (province_code)
+2025-10-30 09:49:37.635 [main] INFO  liquibase.changelog - ChangeSet db/changelog/db.changelog-master.xml::2-create-wards::you ran successfully in 578ms
+2025-10-30 09:49:37.694 [main] INFO  liquibase.ui - Running Changeset: db/changelog/db.changelog-master.xml::3-create-users::thanh
+2025-10-30 09:49:37.920 [main] INFO  liquibase.changelog - Table users created
+2025-10-30 09:49:37.923 [main] INFO  liquibase.changelog - ChangeSet db/changelog/db.changelog-master.xml::3-create-users::thanh ran successfully in 229ms
+2025-10-30 09:49:37.944 [main] INFO  liquibase.ui - Running Changeset: db/changelog/db.changelog-master.xml::4-create-roles::thanh
+2025-10-30 09:49:38.064 [main] INFO  liquibase.changelog - Table roles created
+2025-10-30 09:49:38.067 [main] INFO  liquibase.changelog - ChangeSet db/changelog/db.changelog-master.xml::4-create-roles::thanh ran successfully in 121ms
+2025-10-30 09:49:38.113 [main] INFO  liquibase.ui - Running Changeset: db/changelog/db.changelog-master.xml::5-create-permissions::thanh
+2025-10-30 09:49:38.217 [main] INFO  liquibase.changelog - Table permissions created
+2025-10-30 09:49:38.219 [main] INFO  liquibase.changelog - ChangeSet db/changelog/db.changelog-master.xml::5-create-permissions::thanh ran successfully in 106ms
+2025-10-30 09:49:38.243 [main] INFO  liquibase.ui - Running Changeset: db/changelog/db.changelog-master.xml::6-create-user-roles::thanh
+2025-10-30 09:49:38.354 [main] INFO  liquibase.changelog - Table user_roles created
+2025-10-30 09:49:38.659 [main] INFO  liquibase.changelog - Foreign key constraint added to user_roles (user_id)
+2025-10-30 09:49:38.996 [main] INFO  liquibase.changelog - Foreign key constraint added to user_roles (role_id)
+2025-10-30 09:49:39.241 [main] INFO  liquibase.changelog - Unique constraint added to user_roles(user_id, role_id)
+2025-10-30 09:49:39.243 [main] INFO  liquibase.changelog - ChangeSet db/changelog/db.changelog-master.xml::6-create-user-roles::thanh ran successfully in 999ms
+2025-10-30 09:49:39.276 [main] INFO  liquibase.ui - Running Changeset: db/changelog/db.changelog-master.xml::7-create-role-permissions::thanh
+2025-10-30 09:49:39.387 [main] INFO  liquibase.changelog - Table role_permissions created
+2025-10-30 09:49:39.695 [main] INFO  liquibase.changelog - Foreign key constraint added to role_permissions (role_id)
+2025-10-30 09:49:40.000 [main] INFO  liquibase.changelog - Foreign key constraint added to role_permissions (permission_name)
+2025-10-30 09:49:40.254 [main] INFO  liquibase.changelog - Unique constraint added to role_permissions(role_id, permission_name)
+2025-10-30 09:49:40.255 [main] INFO  liquibase.changelog - ChangeSet db/changelog/db.changelog-master.xml::7-create-role-permissions::thanh ran successfully in 978ms
+2025-10-30 09:49:40.283 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-10-30 09:49:40.284 [main] INFO  liquibase.util - Run:                          7
+2025-10-30 09:49:40.284 [main] INFO  liquibase.util - Previously run:               0
+2025-10-30 09:49:40.284 [main] INFO  liquibase.util - Filtered out:                 0
+2025-10-30 09:49:40.285 [main] INFO  liquibase.util - -------------------------------
+2025-10-30 09:49:40.285 [main] INFO  liquibase.util - Total change sets:            7
+2025-10-30 09:49:40.286 [main] INFO  liquibase.util - Update summary generated
+2025-10-30 09:49:40.290 [main] INFO  liquibase.command - Update command completed successfully.
+2025-10-30 09:49:40.291 [main] INFO  liquibase.ui - Liquibase: Update has been successful. Rows affected: 7
+2025-10-30 09:49:40.310 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2025-10-30 09:49:40.313 [main] INFO  liquibase.command - Command execution complete
+2025-10-30 09:49:42.483 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-30 09:49:46.256 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-30 09:49:46.732 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-10-30 09:49:47.650 [main] INFO  c.o.t.TutorialApplicationTests - Started TutorialApplicationTests in 17.006 seconds (process running for 19.255)
+2025-10-30 09:49:48.469 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Shutdown initiated...
+2025-10-30 09:49:48.487 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Shutdown completed.
+2025-10-30 09:50:01.844 [main] INFO  c.ord.tutorial.TutorialApplication - Starting TutorialApplication using Java 21.0.8 with PID 2384 (D:\java_ord\location_tutorial\target\classes started by Admin in D:\java_ord\location_tutorial)
+2025-10-30 09:50:01.848 [main] INFO  c.ord.tutorial.TutorialApplication - No active profile set, falling back to 1 default profile: "default"
+2025-10-30 09:50:04.132 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-30 09:50:04.133 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-30 09:50:04.208 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-30 09:50:04.389 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Starting...
+2025-10-30 09:50:04.853 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPoolTutorial - Added connection com.mysql.cj.jdbc.ConnectionImpl@59baf2c7
+2025-10-30 09:50:04.856 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Start completed.
+2025-10-30 09:50:05.777 [main] INFO  liquibase.changelog - Reading from location_db.DATABASECHANGELOG
+2025-10-30 09:50:05.863 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-10-30 09:50:05.867 [main] INFO  liquibase.changelog - Reading from location_db.DATABASECHANGELOG
+2025-10-30 09:50:05.884 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-10-30 09:50:05.884 [main] INFO  liquibase.util - Run:                          0
+2025-10-30 09:50:05.885 [main] INFO  liquibase.util - Previously run:               7
+2025-10-30 09:50:05.885 [main] INFO  liquibase.util - Filtered out:                 0
+2025-10-30 09:50:05.886 [main] INFO  liquibase.util - -------------------------------
+2025-10-30 09:50:05.886 [main] INFO  liquibase.util - Total change sets:            7
+2025-10-30 09:50:05.888 [main] INFO  liquibase.util - Update summary generated
+2025-10-30 09:50:05.891 [main] INFO  liquibase.command - Command execution complete
+2025-10-30 09:50:07.847 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-30 09:50:12.992 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-30 09:50:13.694 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-10-30 09:50:14.999 [main] INFO  c.ord.tutorial.TutorialApplication - Started TutorialApplication in 13.943 seconds (process running for 15.328)
+2025-10-30 09:50:55.768 [http-nio-6081-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-30 09:50:57.077 [http-nio-6081-exec-10] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 692 ms
+2025-10-30 10:21:47.000 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Shutdown initiated...
+2025-10-30 10:21:47.010 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Shutdown completed.
+2025-10-30 10:21:51.354 [main] INFO  c.ord.tutorial.TutorialApplication - Starting TutorialApplication using Java 21.0.8 with PID 12688 (D:\java_ord\location_tutorial\target\classes started by Admin in D:\java_ord\location_tutorial)
+2025-10-30 10:21:51.362 [main] INFO  c.ord.tutorial.TutorialApplication - No active profile set, falling back to 1 default profile: "default"
+2025-10-30 10:21:53.792 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-30 10:21:53.793 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-30 10:21:53.862 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-30 10:21:54.006 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Starting...
+2025-10-30 10:21:54.231 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPoolTutorial - Added connection com.mysql.cj.jdbc.ConnectionImpl@7a2a7492
+2025-10-30 10:21:54.234 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Start completed.
+2025-10-30 10:21:55.113 [main] INFO  liquibase.changelog - Reading from location_db.DATABASECHANGELOG
+2025-10-30 10:21:55.254 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+2025-10-30 10:21:55.256 [main] INFO  liquibase.command - Using deploymentId: 1794513974
+2025-10-30 10:21:55.260 [main] INFO  liquibase.changelog - Reading from location_db.DATABASECHANGELOG
+2025-10-30 10:21:55.313 [main] INFO  liquibase.ui - Running Changeset: db/changelog/db.changelog-seed.xml::8-seed-roles-permissions-users::thanh
+2025-10-30 10:21:55.329 [main] INFO  liquibase.changelog - New row inserted into roles
+2025-10-30 10:21:55.337 [main] INFO  liquibase.changelog - New row inserted into roles
+2025-10-30 10:21:55.388 [main] INFO  liquibase.changelog - New row inserted into permissions
+2025-10-30 10:21:55.394 [main] INFO  liquibase.changelog - New row inserted into permissions
+2025-10-30 10:21:55.403 [main] INFO  liquibase.changelog - New row inserted into permissions
+2025-10-30 10:21:55.408 [main] INFO  liquibase.changelog - New row inserted into permissions
+2025-10-30 10:21:55.413 [main] INFO  liquibase.changelog - New row inserted into permissions
+2025-10-30 10:21:55.417 [main] INFO  liquibase.changelog - New row inserted into permissions
+2025-10-30 10:21:55.422 [main] INFO  liquibase.changelog - New row inserted into permissions
+2025-10-30 10:21:55.426 [main] INFO  liquibase.changelog - New row inserted into permissions
+2025-10-30 10:21:55.431 [main] INFO  liquibase.changelog - New row inserted into permissions
+2025-10-30 10:21:55.434 [main] INFO  liquibase.changelog - New row inserted into permissions
+2025-10-30 10:21:55.441 [main] INFO  liquibase.changelog - New row inserted into users
+2025-10-30 10:21:55.446 [main] INFO  liquibase.changelog - New row inserted into users
+2025-10-30 10:21:55.449 [main] INFO  liquibase.changelog - New row inserted into user_roles
+2025-10-30 10:21:55.454 [main] INFO  liquibase.changelog - New row inserted into user_roles
+2025-10-30 10:21:55.459 [main] INFO  liquibase.changelog - New row inserted into role_permissions
+2025-10-30 10:21:55.463 [main] INFO  liquibase.changelog - New row inserted into role_permissions
+2025-10-30 10:21:55.468 [main] INFO  liquibase.changelog - New row inserted into role_permissions
+2025-10-30 10:21:55.472 [main] INFO  liquibase.changelog - New row inserted into role_permissions
+2025-10-30 10:21:55.476 [main] INFO  liquibase.changelog - New row inserted into role_permissions
+2025-10-30 10:21:55.480 [main] INFO  liquibase.changelog - New row inserted into role_permissions
+2025-10-30 10:21:55.484 [main] INFO  liquibase.changelog - New row inserted into role_permissions
+2025-10-30 10:21:55.489 [main] INFO  liquibase.changelog - New row inserted into role_permissions
+2025-10-30 10:21:55.492 [main] INFO  liquibase.changelog - New row inserted into role_permissions
+2025-10-30 10:21:55.496 [main] INFO  liquibase.changelog - New row inserted into role_permissions
+2025-10-30 10:21:55.501 [main] INFO  liquibase.changelog - New row inserted into role_permissions
+2025-10-30 10:21:55.506 [main] INFO  liquibase.changelog - New row inserted into role_permissions
+2025-10-30 10:21:55.510 [main] INFO  liquibase.changelog - New row inserted into role_permissions
+2025-10-30 10:21:55.515 [main] INFO  liquibase.changelog - New row inserted into role_permissions
+2025-10-30 10:21:55.533 [main] INFO  liquibase.changelog - ChangeSet db/changelog/db.changelog-seed.xml::8-seed-roles-permissions-users::thanh ran successfully in 219ms
+2025-10-30 10:21:55.602 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-10-30 10:21:55.602 [main] INFO  liquibase.util - Run:                          1
+2025-10-30 10:21:55.603 [main] INFO  liquibase.util - Previously run:               7
+2025-10-30 10:21:55.603 [main] INFO  liquibase.util - Filtered out:                 0
+2025-10-30 10:21:55.603 [main] INFO  liquibase.util - -------------------------------
+2025-10-30 10:21:55.604 [main] INFO  liquibase.util - Total change sets:            8
+2025-10-30 10:21:55.606 [main] INFO  liquibase.util - Update summary generated
+2025-10-30 10:21:55.614 [main] INFO  liquibase.command - Update command completed successfully.
+2025-10-30 10:21:55.615 [main] INFO  liquibase.ui - Liquibase: Update has been successful. Rows affected: 31
+2025-10-30 10:21:55.646 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2025-10-30 10:21:55.650 [main] INFO  liquibase.command - Command execution complete
+2025-10-30 10:21:57.541 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-30 10:22:00.034 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-30 10:22:00.231 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-10-30 10:22:00.787 [main] INFO  c.ord.tutorial.TutorialApplication - Started TutorialApplication in 10.251 seconds (process running for 11.402)
+2025-10-30 10:29:54.943 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Shutdown initiated...
+2025-10-30 10:29:54.950 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Shutdown completed.
+2025-10-30 10:30:01.471 [main] INFO  c.ord.tutorial.TutorialApplication - Starting TutorialApplication using Java 21.0.8 with PID 5940 (D:\java_ord\location_tutorial\target\classes started by Admin in D:\java_ord\location_tutorial)
+2025-10-30 10:30:01.474 [main] INFO  c.ord.tutorial.TutorialApplication - No active profile set, falling back to 1 default profile: "default"
+2025-10-30 10:30:03.950 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-30 10:30:03.951 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-30 10:30:04.040 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-30 10:30:04.210 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Starting...
+2025-10-30 10:30:04.401 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPoolTutorial - Added connection com.mysql.cj.jdbc.ConnectionImpl@5ab5924c
+2025-10-30 10:30:04.403 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Start completed.
+2025-10-30 10:30:05.438 [main] INFO  liquibase.changelog - Reading from location_db.DATABASECHANGELOG
+2025-10-30 10:30:05.552 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-10-30 10:30:05.556 [main] INFO  liquibase.changelog - Reading from location_db.DATABASECHANGELOG
+2025-10-30 10:30:05.578 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-10-30 10:30:05.579 [main] INFO  liquibase.util - Run:                          0
+2025-10-30 10:30:05.580 [main] INFO  liquibase.util - Previously run:               8
+2025-10-30 10:30:05.580 [main] INFO  liquibase.util - Filtered out:                 0
+2025-10-30 10:30:05.580 [main] INFO  liquibase.util - -------------------------------
+2025-10-30 10:30:05.580 [main] INFO  liquibase.util - Total change sets:            8
+2025-10-30 10:30:05.583 [main] INFO  liquibase.util - Update summary generated
+2025-10-30 10:30:05.585 [main] INFO  liquibase.command - Command execution complete
+2025-10-30 10:30:07.555 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-30 10:30:10.106 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-30 10:30:10.327 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-10-30 10:30:10.886 [main] INFO  c.ord.tutorial.TutorialApplication - Started TutorialApplication in 10.276 seconds (process running for 11.433)
+2025-10-30 10:30:13.380 [http-nio-6081-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-30 10:30:14.368 [http-nio-6081-exec-9] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 493 ms
+2025-10-30 10:30:22.070 [http-nio-6081-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_date,
+        u1_0.email,
+        u1_0.is_enabled,
+        u1_0.full_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2025-10-30 10:30:22.515 [http-nio-6081-exec-10] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 1054, SQLState: 42S22
+2025-10-30 10:30:22.516 [http-nio-6081-exec-10] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Unknown column 'u1_0.role' in 'field list'
+2025-10-30 10:43:14.097 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Shutdown initiated...
+2025-10-30 10:43:14.102 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Shutdown completed.
+2025-10-30 10:48:48.188 [main] INFO  c.ord.tutorial.TutorialApplication - Starting TutorialApplication using Java 21.0.8 with PID 10232 (D:\java_ord\location_tutorial\target\classes started by Admin in D:\java_ord\location_tutorial)
+2025-10-30 10:48:48.190 [main] INFO  c.ord.tutorial.TutorialApplication - No active profile set, falling back to 1 default profile: "default"
+2025-10-30 10:48:50.530 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-30 10:48:50.531 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-30 10:48:50.613 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-30 10:48:50.775 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Starting...
+2025-10-30 10:48:50.962 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPoolTutorial - Added connection com.mysql.cj.jdbc.ConnectionImpl@67e6eb52
+2025-10-30 10:48:50.964 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Start completed.
+2025-10-30 10:48:51.893 [main] INFO  liquibase.changelog - Reading from location_db.DATABASECHANGELOG
+2025-10-30 10:48:52.005 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-10-30 10:48:52.009 [main] INFO  liquibase.changelog - Reading from location_db.DATABASECHANGELOG
+2025-10-30 10:48:52.022 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-10-30 10:48:52.023 [main] INFO  liquibase.util - Run:                          0
+2025-10-30 10:48:52.023 [main] INFO  liquibase.util - Previously run:               8
+2025-10-30 10:48:52.024 [main] INFO  liquibase.util - Filtered out:                 0
+2025-10-30 10:48:52.024 [main] INFO  liquibase.util - -------------------------------
+2025-10-30 10:48:52.025 [main] INFO  liquibase.util - Total change sets:            8
+2025-10-30 10:48:52.026 [main] INFO  liquibase.util - Update summary generated
+2025-10-30 10:48:52.028 [main] INFO  liquibase.command - Command execution complete
+2025-10-30 10:48:54.021 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-30 10:48:56.560 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-30 10:48:56.776 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-10-30 10:48:57.401 [main] INFO  c.ord.tutorial.TutorialApplication - Started TutorialApplication in 10.202 seconds (process running for 11.172)
+2025-10-30 10:49:01.558 [http-nio-6081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-30 10:49:02.625 [http-nio-6081-exec-9] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 549 ms
+2025-10-30 10:49:08.583 [http-nio-6081-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_date,
+        u1_0.email,
+        u1_0.is_enabled,
+        u1_0.full_name,
+        u1_0.password,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2025-10-30 10:49:22.011 [http-nio-6081-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_date,
+        u1_0.email,
+        u1_0.is_enabled,
+        u1_0.full_name,
+        u1_0.password,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2025-10-30 10:49:22.052 [http-nio-6081-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2025-10-30 10:55:57.337 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Shutdown initiated...
+2025-10-30 10:55:57.341 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Shutdown completed.
+2025-10-30 11:05:00.943 [main] INFO  c.ord.tutorial.TutorialApplication - Starting TutorialApplication using Java 21.0.8 with PID 8396 (D:\java_ord\location_tutorial\target\classes started by Admin in D:\java_ord\location_tutorial)
+2025-10-30 11:05:00.946 [main] INFO  c.ord.tutorial.TutorialApplication - No active profile set, falling back to 1 default profile: "default"
+2025-10-30 11:05:03.362 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-30 11:05:03.364 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-30 11:05:03.454 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-30 11:05:03.653 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Starting...
+2025-10-30 11:05:04.854 [main] ERROR o.s.b.w.e.tomcat.TomcatStarter - Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'jwtAuthenticationFilter' defined in file [D:\java_ord\location_tutorial\target\classes\com\ord\core\security\jwt\JwtAuthenticationFilter.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'customUserDetailsService' defined in file [D:\java_ord\location_tutorial\target\classes\com\ord\tutorial\service\CustomUserDetailsService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.ord.tutorial.repository.UserRepository defined in @EnableJpaRepositories declared on DatabaseConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+2025-10-30 11:05:04.890 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-10-30 11:05:04.903 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2025-10-30 11:05:04.948 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:170)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.ord.tutorial.TutorialApplication.main(TutorialApplication.java:10)
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:147)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:107)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:517)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:219)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:193)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:167)
+	... 8 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtAuthenticationFilter' defined in file [D:\java_ord\location_tutorial\target\classes\com\ord\core\security\jwt\JwtAuthenticationFilter.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'customUserDetailsService' defined in file [D:\java_ord\location_tutorial\target\classes\com\ord\tutorial\service\CustomUserDetailsService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.ord.tutorial.repository.UserRepository defined in @EnableJpaRepositories declared on DatabaseConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1395)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1232)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:230)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:184)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:179)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:164)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:96)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:271)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:245)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:52)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4464)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:773)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:203)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:412)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:870)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:438)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:128)
+	... 13 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'customUserDetailsService' defined in file [D:\java_ord\location_tutorial\target\classes\com\ord\tutorial\service\CustomUserDetailsService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.ord.tutorial.repository.UserRepository defined in @EnableJpaRepositories declared on DatabaseConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1395)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1232)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1760)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1643)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 54 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository' defined in com.ord.tutorial.repository.UserRepository defined in @EnableJpaRepositories declared on DatabaseConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1725)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1474)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:606)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1698)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1643)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 68 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jpaSharedEM_entityManagerFactory': Cannot resolve reference to bean 'entityManagerFactory' while setting constructor argument
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:691)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
+	... 81 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.DatabaseException: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
+	... 93 common frames omitted
+Caused by: liquibase.exception.LiquibaseException: liquibase.exception.DatabaseException: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:288)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822)
+	... 102 common frames omitted
+Caused by: liquibase.exception.DatabaseException: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at liquibase.integration.spring.SpringLiquibase.lambda$afterPropertiesSet$0(SpringLiquibase.java:280)
+	at liquibase.Scope.lambda$child$0(Scope.java:201)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:271)
+	... 104 common frames omitted
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:165)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:55)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:839)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:415)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:370)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:207)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111)
+	at liquibase.integration.spring.SpringLiquibase.lambda$afterPropertiesSet$0(SpringLiquibase.java:275)
+	... 109 common frames omitted
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:52)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:95)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:140)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:156)
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:592)
+	at com.mysql.cj.protocol.a.NativeProtocol.readServerCapabilities(NativeProtocol.java:516)
+	at com.mysql.cj.protocol.a.NativeProtocol.beforeHandshake(NativeProtocol.java:411)
+	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1331)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:155)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:963)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	... 120 common frames omitted
+Caused by: java.io.EOFException: Can not read response from server. Expected to read 4 bytes, read 0 bytes before connection was unexpectedly lost.
+	at com.mysql.cj.protocol.FullReadInputStream.readFully(FullReadInputStream.java:58)
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeaderLocal(SimplePacketReader.java:72)
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:54)
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:36)
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:586)
+	... 126 common frames omitted
+2025-10-30 11:05:49.471 [main] INFO  c.o.t.TutorialApplicationTests - Starting TutorialApplicationTests using Java 21.0.8 with PID 1868 (started by Admin in D:\java_ord\location_tutorial)
+2025-10-30 11:05:49.474 [main] INFO  c.o.t.TutorialApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-10-30 11:05:52.296 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Starting...
+2025-10-30 11:05:52.651 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPoolTutorial - Added connection com.mysql.cj.jdbc.ConnectionImpl@43a7203e
+2025-10-30 11:05:52.655 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Start completed.
+2025-10-30 11:05:53.680 [main] INFO  liquibase.changelog - Creating database history table with name: location_db.DATABASECHANGELOG
+2025-10-30 11:05:53.977 [main] INFO  liquibase.changelog - Reading from location_db.DATABASECHANGELOG
+2025-10-30 11:05:54.421 [main] INFO  liquibase.snapshot - Creating snapshot
+2025-10-30 11:05:54.837 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+2025-10-30 11:05:54.841 [main] INFO  liquibase.command - Using deploymentId: 1797152260
+2025-10-30 11:05:54.846 [main] INFO  liquibase.changelog - Reading from location_db.DATABASECHANGELOG
+2025-10-30 11:05:54.988 [main] INFO  liquibase.ui - Running Changeset: db/changelog/db.changelog-master.xml::1-create-provinces::you
+2025-10-30 11:05:55.386 [main] INFO  liquibase.changelog - Table provinces created
+2025-10-30 11:05:55.389 [main] INFO  liquibase.changelog - ChangeSet db/changelog/db.changelog-master.xml::1-create-provinces::you ran successfully in 399ms
+2025-10-30 11:05:55.420 [main] INFO  liquibase.ui - Running Changeset: db/changelog/db.changelog-master.xml::2-create-wards::you
+2025-10-30 11:05:55.574 [main] INFO  liquibase.changelog - Table wards created
+2025-10-30 11:05:56.100 [main] INFO  liquibase.changelog - Foreign key constraint added to wards (province_code)
+2025-10-30 11:05:56.102 [main] INFO  liquibase.changelog - ChangeSet db/changelog/db.changelog-master.xml::2-create-wards::you ran successfully in 681ms
+2025-10-30 11:05:56.138 [main] INFO  liquibase.ui - Running Changeset: db/changelog/db.changelog-master.xml::3-create-users::thanh
+2025-10-30 11:05:56.292 [main] INFO  liquibase.changelog - Table users created
+2025-10-30 11:05:56.295 [main] INFO  liquibase.changelog - ChangeSet db/changelog/db.changelog-master.xml::3-create-users::thanh ran successfully in 156ms
+2025-10-30 11:05:56.321 [main] INFO  liquibase.ui - Running Changeset: db/changelog/db.changelog-master.xml::4-create-roles::thanh
+2025-10-30 11:05:56.530 [main] INFO  liquibase.changelog - Table roles created
+2025-10-30 11:05:56.531 [main] INFO  liquibase.changelog - ChangeSet db/changelog/db.changelog-master.xml::4-create-roles::thanh ran successfully in 209ms
+2025-10-30 11:05:56.563 [main] INFO  liquibase.ui - Running Changeset: db/changelog/db.changelog-master.xml::5-create-permissions::thanh
+2025-10-30 11:05:56.679 [main] INFO  liquibase.changelog - Table permissions created
+2025-10-30 11:05:56.683 [main] INFO  liquibase.changelog - ChangeSet db/changelog/db.changelog-master.xml::5-create-permissions::thanh ran successfully in 118ms
+2025-10-30 11:05:56.712 [main] INFO  liquibase.ui - Running Changeset: db/changelog/db.changelog-master.xml::6-create-user-roles::thanh
+2025-10-30 11:05:56.838 [main] INFO  liquibase.changelog - Table user_roles created
+2025-10-30 11:05:57.143 [main] INFO  liquibase.changelog - Foreign key constraint added to user_roles (user_id)
+2025-10-30 11:05:57.452 [main] INFO  liquibase.changelog - Foreign key constraint added to user_roles (role_id)
+2025-10-30 11:05:57.685 [main] INFO  liquibase.changelog - Unique constraint added to user_roles(user_id, role_id)
+2025-10-30 11:05:57.687 [main] INFO  liquibase.changelog - ChangeSet db/changelog/db.changelog-master.xml::6-create-user-roles::thanh ran successfully in 973ms
+2025-10-30 11:05:57.708 [main] INFO  liquibase.ui - Running Changeset: db/changelog/db.changelog-master.xml::7-create-role-permissions::thanh
+2025-10-30 11:05:57.828 [main] INFO  liquibase.changelog - Table role_permissions created
+2025-10-30 11:05:58.109 [main] INFO  liquibase.changelog - Foreign key constraint added to role_permissions (role_id)
+2025-10-30 11:05:58.409 [main] INFO  liquibase.changelog - Foreign key constraint added to role_permissions (permission_name)
+2025-10-30 11:05:58.635 [main] INFO  liquibase.changelog - Unique constraint added to role_permissions(role_id, permission_name)
+2025-10-30 11:05:58.636 [main] INFO  liquibase.changelog - ChangeSet db/changelog/db.changelog-master.xml::7-create-role-permissions::thanh ran successfully in 927ms
+2025-10-30 11:05:58.680 [main] INFO  liquibase.ui - Running Changeset: db/changelog/db.changelog-seed.xml::8-seed-roles-permissions-users::thanh
+2025-10-30 11:05:58.688 [main] INFO  liquibase.changelog - New row inserted into roles
+2025-10-30 11:05:58.692 [main] INFO  liquibase.changelog - New row inserted into roles
+2025-10-30 11:05:58.697 [main] INFO  liquibase.changelog - New row inserted into permissions
+2025-10-30 11:05:58.702 [main] INFO  liquibase.changelog - New row inserted into permissions
+2025-10-30 11:05:58.706 [main] INFO  liquibase.changelog - New row inserted into permissions
+2025-10-30 11:05:58.715 [main] INFO  liquibase.changelog - New row inserted into permissions
+2025-10-30 11:05:58.721 [main] INFO  liquibase.changelog - New row inserted into permissions
+2025-10-30 11:05:58.726 [main] INFO  liquibase.changelog - New row inserted into permissions
+2025-10-30 11:05:58.730 [main] INFO  liquibase.changelog - New row inserted into permissions
+2025-10-30 11:05:58.735 [main] INFO  liquibase.changelog - New row inserted into permissions
+2025-10-30 11:05:58.740 [main] INFO  liquibase.changelog - New row inserted into permissions
+2025-10-30 11:05:58.744 [main] INFO  liquibase.changelog - New row inserted into permissions
+2025-10-30 11:05:58.751 [main] INFO  liquibase.changelog - New row inserted into users
+2025-10-30 11:05:58.756 [main] INFO  liquibase.changelog - New row inserted into users
+2025-10-30 11:05:58.761 [main] INFO  liquibase.changelog - New row inserted into user_roles
+2025-10-30 11:05:58.765 [main] INFO  liquibase.changelog - New row inserted into user_roles
+2025-10-30 11:05:58.770 [main] INFO  liquibase.changelog - New row inserted into role_permissions
+2025-10-30 11:05:58.774 [main] INFO  liquibase.changelog - New row inserted into role_permissions
+2025-10-30 11:05:58.779 [main] INFO  liquibase.changelog - New row inserted into role_permissions
+2025-10-30 11:05:58.783 [main] INFO  liquibase.changelog - New row inserted into role_permissions
+2025-10-30 11:05:58.787 [main] INFO  liquibase.changelog - New row inserted into role_permissions
+2025-10-30 11:05:58.792 [main] INFO  liquibase.changelog - New row inserted into role_permissions
+2025-10-30 11:05:58.795 [main] INFO  liquibase.changelog - New row inserted into role_permissions
+2025-10-30 11:05:58.799 [main] INFO  liquibase.changelog - New row inserted into role_permissions
+2025-10-30 11:05:58.804 [main] INFO  liquibase.changelog - New row inserted into role_permissions
+2025-10-30 11:05:58.809 [main] INFO  liquibase.changelog - New row inserted into role_permissions
+2025-10-30 11:05:58.815 [main] INFO  liquibase.changelog - New row inserted into role_permissions
+2025-10-30 11:05:58.822 [main] INFO  liquibase.changelog - New row inserted into role_permissions
+2025-10-30 11:05:58.828 [main] INFO  liquibase.changelog - New row inserted into role_permissions
+2025-10-30 11:05:58.834 [main] INFO  liquibase.changelog - New row inserted into role_permissions
+2025-10-30 11:05:58.863 [main] INFO  liquibase.changelog - ChangeSet db/changelog/db.changelog-seed.xml::8-seed-roles-permissions-users::thanh ran successfully in 182ms
+2025-10-30 11:05:58.899 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-10-30 11:05:58.899 [main] INFO  liquibase.util - Run:                          8
+2025-10-30 11:05:58.900 [main] INFO  liquibase.util - Previously run:               0
+2025-10-30 11:05:58.901 [main] INFO  liquibase.util - Filtered out:                 0
+2025-10-30 11:05:58.901 [main] INFO  liquibase.util - -------------------------------
+2025-10-30 11:05:58.901 [main] INFO  liquibase.util - Total change sets:            8
+2025-10-30 11:05:58.902 [main] INFO  liquibase.util - Update summary generated
+2025-10-30 11:05:58.907 [main] INFO  liquibase.command - Update command completed successfully.
+2025-10-30 11:05:58.908 [main] INFO  liquibase.ui - Liquibase: Update has been successful. Rows affected: 38
+2025-10-30 11:05:58.929 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2025-10-30 11:05:58.933 [main] INFO  liquibase.command - Command execution complete
+2025-10-30 11:06:01.032 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-30 11:06:04.476 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-30 11:06:04.869 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-10-30 11:06:06.333 [main] INFO  c.o.t.TutorialApplicationTests - Started TutorialApplicationTests in 17.508 seconds (process running for 19.364)
+2025-10-30 11:06:08.030 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Shutdown initiated...
+2025-10-30 11:06:08.063 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Shutdown completed.
+2025-10-30 11:06:18.769 [main] INFO  c.ord.tutorial.TutorialApplication - Starting TutorialApplication using Java 21.0.8 with PID 5916 (D:\java_ord\location_tutorial\target\classes started by Admin in D:\java_ord\location_tutorial)
+2025-10-30 11:06:18.774 [main] INFO  c.ord.tutorial.TutorialApplication - No active profile set, falling back to 1 default profile: "default"
+2025-10-30 11:06:21.505 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-30 11:06:21.506 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-30 11:06:21.606 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-30 11:06:21.837 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Starting...
+2025-10-30 11:06:22.125 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPoolTutorial - Added connection com.mysql.cj.jdbc.ConnectionImpl@7a2a7492
+2025-10-30 11:06:22.128 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Start completed.
+2025-10-30 11:06:23.055 [main] INFO  liquibase.changelog - Reading from location_db.DATABASECHANGELOG
+2025-10-30 11:06:23.146 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-10-30 11:06:23.150 [main] INFO  liquibase.changelog - Reading from location_db.DATABASECHANGELOG
+2025-10-30 11:06:23.163 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-10-30 11:06:23.164 [main] INFO  liquibase.util - Run:                          0
+2025-10-30 11:06:23.164 [main] INFO  liquibase.util - Previously run:               8
+2025-10-30 11:06:23.165 [main] INFO  liquibase.util - Filtered out:                 0
+2025-10-30 11:06:23.165 [main] INFO  liquibase.util - -------------------------------
+2025-10-30 11:06:23.165 [main] INFO  liquibase.util - Total change sets:            8
+2025-10-30 11:06:23.167 [main] INFO  liquibase.util - Update summary generated
+2025-10-30 11:06:23.169 [main] INFO  liquibase.command - Command execution complete
+2025-10-30 11:06:24.747 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-30 11:06:27.253 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-30 11:06:27.497 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-10-30 11:06:28.163 [main] INFO  c.ord.tutorial.TutorialApplication - Started TutorialApplication in 10.303 seconds (process running for 12.198)
+2025-10-30 11:06:28.461 [http-nio-6081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-30 11:06:29.993 [http-nio-6081-exec-9] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 703 ms
+2025-10-30 11:07:03.135 [http-nio-6081-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_date,
+        u1_0.email,
+        u1_0.is_enabled,
+        u1_0.full_name,
+        u1_0.password,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2025-10-30 11:07:20.349 [http-nio-6081-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_date,
+        u1_0.email,
+        u1_0.is_enabled,
+        u1_0.full_name,
+        u1_0.password,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2025-10-30 11:07:20.378 [http-nio-6081-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2025-10-30 11:14:08.687 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Shutdown initiated...
+2025-10-30 11:14:08.694 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Shutdown completed.
+2025-10-30 11:16:39.963 [main] INFO  c.o.t.TutorialApplicationTests - Starting TutorialApplicationTests using Java 21.0.8 with PID 6328 (started by Admin in D:\java_ord\location_tutorial)
+2025-10-30 11:16:39.973 [main] INFO  c.o.t.TutorialApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-10-30 11:16:44.109 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Starting...
+2025-10-30 11:16:45.538 [main] WARN  o.s.w.c.s.GenericWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'liquibase' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.DatabaseException: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2025-10-30 11:16:45.682 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'liquibase' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.DatabaseException: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:328)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.test.context.SpringBootContextLoader.lambda$loadContext$3(SpringBootContextLoader.java:144)
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:58)
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:46)
+	at org.springframework.boot.SpringApplication.withHook(SpringApplication.java:1461)
+	at org.springframework.boot.test.context.SpringBootContextLoader$ContextLoaderHook.run(SpringBootContextLoader.java:563)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:144)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:110)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:225)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:152)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:130)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:200)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:139)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:260)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:159)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$10(ClassBasedTestDescriptor.java:383)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:388)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$11(ClassBasedTestDescriptor.java:382)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:382)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:293)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:292)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:281)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:280)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:27)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:112)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:111)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:128)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:128)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:201)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:170)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:94)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:59)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:142)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.junit.platform.launcher.core.InterceptingLauncher.lambda$execute$1(InterceptingLauncher.java:39)
+	at org.junit.platform.launcher.core.ClasspathAlignmentCheckingLauncherInterceptor.intercept(ClasspathAlignmentCheckingLauncherInterceptor.java:25)
+	at org.junit.platform.launcher.core.InterceptingLauncher.execute(InterceptingLauncher.java:38)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LauncherAdapter.executeWithoutCancellationToken(LauncherAdapter.java:60)
+	at org.apache.maven.surefire.junitplatform.LauncherAdapter.execute(LauncherAdapter.java:52)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:203)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:168)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:136)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.DatabaseException: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
+	... 95 common frames omitted
+Caused by: liquibase.exception.LiquibaseException: liquibase.exception.DatabaseException: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:288)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822)
+	... 102 common frames omitted
+Caused by: liquibase.exception.DatabaseException: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at liquibase.integration.spring.SpringLiquibase.lambda$afterPropertiesSet$0(SpringLiquibase.java:280)
+	at liquibase.Scope.lambda$child$0(Scope.java:201)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:271)
+	... 104 common frames omitted
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:165)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:55)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:839)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:415)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:370)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:207)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111)
+	at liquibase.integration.spring.SpringLiquibase.lambda$afterPropertiesSet$0(SpringLiquibase.java:275)
+	... 109 common frames omitted
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:52)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:95)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:140)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:156)
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:592)
+	at com.mysql.cj.protocol.a.NativeProtocol.readServerCapabilities(NativeProtocol.java:516)
+	at com.mysql.cj.protocol.a.NativeProtocol.beforeHandshake(NativeProtocol.java:411)
+	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1331)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:155)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:963)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	... 120 common frames omitted
+Caused by: java.io.EOFException: Can not read response from server. Expected to read 4 bytes, read 0 bytes before connection was unexpectedly lost.
+	at com.mysql.cj.protocol.FullReadInputStream.readFully(FullReadInputStream.java:58)
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeaderLocal(SimplePacketReader.java:72)
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:54)
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:36)
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:586)
+	... 126 common frames omitted
+2025-10-30 11:16:45.705 [main] WARN  o.s.test.context.TestContextManager - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener] to prepare test instance [com.ord.tutorial.TutorialApplicationTests@3dfe59d7]
+java.lang.IllegalStateException: Failed to load ApplicationContext for [WebMergedContextConfiguration@2905b568 testClass = com.ord.tutorial.TutorialApplicationTests, locations = [], classes = [com.ord.tutorial.TutorialApplication], contextInitializerClasses = [], activeProfiles = [], propertySourceDescriptors = [], propertySourceProperties = ["org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true"], contextCustomizers = [org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@cd1e646, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@2bec854f, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@23202fce, org.springframework.boot.test.web.reactor.netty.DisableReactorResourceFactoryGlobalResourcesContextCustomizerFactory$DisableReactorResourceFactoryGlobalResourcesContextCustomizerCustomizer@2e32ccc5, org.springframework.boot.test.autoconfigure.OnFailureConditionReportContextCustomizerFactory$OnFailureConditionReportContextCustomizer@295cf707, org.springframework.boot.test.autoconfigure.actuate.observability.ObservabilityContextCustomizerFactory$DisableObservabilityContextCustomizer@1f, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizer@7b7fdc8, org.springframework.test.context.support.DynamicPropertiesContextCustomizer@0, org.springframework.boot.test.context.SpringBootTestAnnotation@8130251b], resourceBasePath = "src/main/webapp", contextLoader = org.springframework.boot.test.context.SpringBootContextLoader, parent = null]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:180)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:130)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:200)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:139)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:260)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:159)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$10(ClassBasedTestDescriptor.java:383)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:388)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$11(ClassBasedTestDescriptor.java:382)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:382)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:293)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:292)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:281)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:280)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:27)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:112)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:111)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:128)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:128)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:201)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:170)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:94)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:59)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:142)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.junit.platform.launcher.core.InterceptingLauncher.lambda$execute$1(InterceptingLauncher.java:39)
+	at org.junit.platform.launcher.core.ClasspathAlignmentCheckingLauncherInterceptor.intercept(ClasspathAlignmentCheckingLauncherInterceptor.java:25)
+	at org.junit.platform.launcher.core.InterceptingLauncher.execute(InterceptingLauncher.java:38)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LauncherAdapter.executeWithoutCancellationToken(LauncherAdapter.java:60)
+	at org.apache.maven.surefire.junitplatform.LauncherAdapter.execute(LauncherAdapter.java:52)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:203)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:168)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:136)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'liquibase' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.DatabaseException: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:328)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.test.context.SpringBootContextLoader.lambda$loadContext$3(SpringBootContextLoader.java:144)
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:58)
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:46)
+	at org.springframework.boot.SpringApplication.withHook(SpringApplication.java:1461)
+	at org.springframework.boot.test.context.SpringBootContextLoader$ContextLoaderHook.run(SpringBootContextLoader.java:563)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:144)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:110)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:225)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:152)
+	... 80 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.DatabaseException: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
+	... 95 common frames omitted
+Caused by: liquibase.exception.LiquibaseException: liquibase.exception.DatabaseException: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:288)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822)
+	... 102 common frames omitted
+Caused by: liquibase.exception.DatabaseException: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at liquibase.integration.spring.SpringLiquibase.lambda$afterPropertiesSet$0(SpringLiquibase.java:280)
+	at liquibase.Scope.lambda$child$0(Scope.java:201)
+	at liquibase.Scope.child(Scope.java:210)
+	at liquibase.Scope.child(Scope.java:200)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:271)
+	... 104 common frames omitted
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:165)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:55)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:839)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:415)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:370)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:207)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111)
+	at liquibase.integration.spring.SpringLiquibase.lambda$afterPropertiesSet$0(SpringLiquibase.java:275)
+	... 109 common frames omitted
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:52)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:95)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:140)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:156)
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:592)
+	at com.mysql.cj.protocol.a.NativeProtocol.readServerCapabilities(NativeProtocol.java:516)
+	at com.mysql.cj.protocol.a.NativeProtocol.beforeHandshake(NativeProtocol.java:411)
+	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1331)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:155)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:963)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	... 120 common frames omitted
+Caused by: java.io.EOFException: Can not read response from server. Expected to read 4 bytes, read 0 bytes before connection was unexpectedly lost.
+	at com.mysql.cj.protocol.FullReadInputStream.readFully(FullReadInputStream.java:58)
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeaderLocal(SimplePacketReader.java:72)
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:54)
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:36)
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:586)
+	... 126 common frames omitted
+2025-10-30 11:18:36.931 [main] INFO  c.ord.tutorial.TutorialApplication - Starting TutorialApplication using Java 21.0.8 with PID 12016 (D:\java_ord\location_tutorial\target\classes started by Admin in D:\java_ord\location_tutorial)
+2025-10-30 11:18:36.934 [main] INFO  c.ord.tutorial.TutorialApplication - No active profile set, falling back to 1 default profile: "default"
+2025-10-30 11:18:38.815 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-30 11:18:38.816 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-30 11:18:38.881 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-30 11:18:39.028 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Starting...
+2025-10-30 11:18:39.244 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPoolTutorial - Added connection com.mysql.cj.jdbc.ConnectionImpl@25fd6d1e
+2025-10-30 11:18:39.249 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Start completed.
+2025-10-30 11:18:39.932 [main] INFO  liquibase.changelog - Creating database history table with name: location_db.DATABASECHANGELOG
+2025-10-30 11:18:40.164 [main] INFO  liquibase.changelog - Reading from location_db.DATABASECHANGELOG
+2025-10-30 11:18:40.608 [main] INFO  liquibase.snapshot - Creating snapshot
+2025-10-30 11:18:41.012 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+2025-10-30 11:18:41.015 [main] INFO  liquibase.command - Using deploymentId: 1797918999
+2025-10-30 11:18:41.020 [main] INFO  liquibase.changelog - Reading from location_db.DATABASECHANGELOG
+2025-10-30 11:18:41.067 [main] INFO  liquibase.ui - Running Changeset: db/changelog/db.changelog-master.xml::1-create-provinces::you
+2025-10-30 11:18:41.197 [main] INFO  liquibase.changelog - Table provinces created
+2025-10-30 11:18:41.200 [main] INFO  liquibase.changelog - ChangeSet db/changelog/db.changelog-master.xml::1-create-provinces::you ran successfully in 131ms
+2025-10-30 11:18:41.237 [main] INFO  liquibase.ui - Running Changeset: db/changelog/db.changelog-master.xml::2-create-wards::you
+2025-10-30 11:18:41.393 [main] INFO  liquibase.changelog - Table wards created
+2025-10-30 11:18:41.831 [main] INFO  liquibase.changelog - Foreign key constraint added to wards (province_code)
+2025-10-30 11:18:41.834 [main] INFO  liquibase.changelog - ChangeSet db/changelog/db.changelog-master.xml::2-create-wards::you ran successfully in 596ms
+2025-10-30 11:18:41.865 [main] INFO  liquibase.ui - Running Changeset: db/changelog/db.changelog-master.xml::3-create-users::thanh
+2025-10-30 11:18:42.038 [main] INFO  liquibase.changelog - Table users created
+2025-10-30 11:18:42.044 [main] INFO  liquibase.changelog - ChangeSet db/changelog/db.changelog-master.xml::3-create-users::thanh ran successfully in 179ms
+2025-10-30 11:18:42.103 [main] INFO  liquibase.ui - Running Changeset: db/changelog/db.changelog-master.xml::4-create-roles::thanh
+2025-10-30 11:18:42.243 [main] INFO  liquibase.changelog - Table roles created
+2025-10-30 11:18:42.249 [main] INFO  liquibase.changelog - ChangeSet db/changelog/db.changelog-master.xml::4-create-roles::thanh ran successfully in 145ms
+2025-10-30 11:18:42.305 [main] INFO  liquibase.ui - Running Changeset: db/changelog/db.changelog-master.xml::5-create-permissions::thanh
+2025-10-30 11:18:42.435 [main] INFO  liquibase.changelog - Table permissions created
+2025-10-30 11:18:42.439 [main] INFO  liquibase.changelog - ChangeSet db/changelog/db.changelog-master.xml::5-create-permissions::thanh ran successfully in 132ms
+2025-10-30 11:18:42.487 [main] INFO  liquibase.ui - Running Changeset: db/changelog/db.changelog-master.xml::6-create-user-roles::thanh
+2025-10-30 11:18:42.657 [main] INFO  liquibase.changelog - Table user_roles created
+2025-10-30 11:18:42.961 [main] INFO  liquibase.changelog - Foreign key constraint added to user_roles (user_id)
+2025-10-30 11:18:43.285 [main] INFO  liquibase.changelog - Foreign key constraint added to user_roles (role_id)
+2025-10-30 11:18:43.558 [main] INFO  liquibase.changelog - Unique constraint added to user_roles(user_id, role_id)
+2025-10-30 11:18:43.561 [main] INFO  liquibase.changelog - ChangeSet db/changelog/db.changelog-master.xml::6-create-user-roles::thanh ran successfully in 1072ms
+2025-10-30 11:18:43.591 [main] INFO  liquibase.ui - Running Changeset: db/changelog/db.changelog-master.xml::7-create-role-permissions::thanh
+2025-10-30 11:18:43.734 [main] INFO  liquibase.changelog - Table role_permissions created
+2025-10-30 11:18:44.071 [main] INFO  liquibase.changelog - Foreign key constraint added to role_permissions (role_id)
+2025-10-30 11:18:44.415 [main] INFO  liquibase.changelog - Foreign key constraint added to role_permissions (permission_name)
+2025-10-30 11:18:44.664 [main] INFO  liquibase.changelog - Unique constraint added to role_permissions(role_id, permission_name)
+2025-10-30 11:18:44.665 [main] INFO  liquibase.changelog - ChangeSet db/changelog/db.changelog-master.xml::7-create-role-permissions::thanh ran successfully in 1072ms
+2025-10-30 11:18:44.703 [main] INFO  liquibase.ui - Running Changeset: db/changelog/db.changelog-seed.xml::8-seed-roles-permissions-users::thanh
+2025-10-30 11:18:44.710 [main] INFO  liquibase.changelog - New row inserted into roles
+2025-10-30 11:18:44.715 [main] INFO  liquibase.changelog - New row inserted into roles
+2025-10-30 11:18:44.719 [main] INFO  liquibase.changelog - New row inserted into permissions
+2025-10-30 11:18:44.724 [main] INFO  liquibase.changelog - New row inserted into permissions
+2025-10-30 11:18:44.727 [main] INFO  liquibase.changelog - New row inserted into permissions
+2025-10-30 11:18:44.731 [main] INFO  liquibase.changelog - New row inserted into permissions
+2025-10-30 11:18:44.735 [main] INFO  liquibase.changelog - New row inserted into permissions
+2025-10-30 11:18:44.741 [main] INFO  liquibase.changelog - New row inserted into permissions
+2025-10-30 11:18:44.744 [main] INFO  liquibase.changelog - New row inserted into permissions
+2025-10-30 11:18:44.748 [main] INFO  liquibase.changelog - New row inserted into permissions
+2025-10-30 11:18:44.753 [main] INFO  liquibase.changelog - New row inserted into permissions
+2025-10-30 11:18:44.757 [main] INFO  liquibase.changelog - New row inserted into permissions
+2025-10-30 11:18:44.763 [main] INFO  liquibase.changelog - New row inserted into users
+2025-10-30 11:18:44.768 [main] INFO  liquibase.changelog - New row inserted into users
+2025-10-30 11:18:44.772 [main] INFO  liquibase.changelog - New row inserted into user_roles
+2025-10-30 11:18:44.776 [main] INFO  liquibase.changelog - New row inserted into user_roles
+2025-10-30 11:18:44.781 [main] INFO  liquibase.changelog - New row inserted into role_permissions
+2025-10-30 11:18:44.785 [main] INFO  liquibase.changelog - New row inserted into role_permissions
+2025-10-30 11:18:44.790 [main] INFO  liquibase.changelog - New row inserted into role_permissions
+2025-10-30 11:18:44.794 [main] INFO  liquibase.changelog - New row inserted into role_permissions
+2025-10-30 11:18:44.798 [main] INFO  liquibase.changelog - New row inserted into role_permissions
+2025-10-30 11:18:44.801 [main] INFO  liquibase.changelog - New row inserted into role_permissions
+2025-10-30 11:18:44.805 [main] INFO  liquibase.changelog - New row inserted into role_permissions
+2025-10-30 11:18:44.808 [main] INFO  liquibase.changelog - New row inserted into role_permissions
+2025-10-30 11:18:44.811 [main] INFO  liquibase.changelog - New row inserted into role_permissions
+2025-10-30 11:18:44.827 [main] INFO  liquibase.changelog - New row inserted into role_permissions
+2025-10-30 11:18:44.832 [main] INFO  liquibase.changelog - New row inserted into role_permissions
+2025-10-30 11:18:44.836 [main] INFO  liquibase.changelog - New row inserted into role_permissions
+2025-10-30 11:18:44.841 [main] INFO  liquibase.changelog - New row inserted into role_permissions
+2025-10-30 11:18:44.847 [main] INFO  liquibase.changelog - New row inserted into role_permissions
+2025-10-30 11:18:44.867 [main] INFO  liquibase.changelog - ChangeSet db/changelog/db.changelog-seed.xml::8-seed-roles-permissions-users::thanh ran successfully in 164ms
+2025-10-30 11:18:44.904 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-10-30 11:18:44.905 [main] INFO  liquibase.util - Run:                          8
+2025-10-30 11:18:44.905 [main] INFO  liquibase.util - Previously run:               0
+2025-10-30 11:18:44.906 [main] INFO  liquibase.util - Filtered out:                 0
+2025-10-30 11:18:44.906 [main] INFO  liquibase.util - -------------------------------
+2025-10-30 11:18:44.907 [main] INFO  liquibase.util - Total change sets:            8
+2025-10-30 11:18:44.908 [main] INFO  liquibase.util - Update summary generated
+2025-10-30 11:18:44.913 [main] INFO  liquibase.command - Update command completed successfully.
+2025-10-30 11:18:44.914 [main] INFO  liquibase.ui - Liquibase: Update has been successful. Rows affected: 38
+2025-10-30 11:18:44.947 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2025-10-30 11:18:44.952 [main] INFO  liquibase.command - Command execution complete
+2025-10-30 11:18:46.826 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-30 11:18:49.279 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-30 11:18:49.504 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-10-30 11:18:50.068 [main] INFO  c.ord.tutorial.TutorialApplication - Started TutorialApplication in 13.973 seconds (process running for 14.956)
+2025-10-30 11:18:59.598 [http-nio-6081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-30 11:18:59.896 [http-nio-6081-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_date,
+        u1_0.email,
+        u1_0.is_enabled,
+        u1_0.full_name,
+        u1_0.password,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2025-10-30 11:18:59.947 [http-nio-6081-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2025-10-30 11:19:28.620 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Shutdown initiated...
+2025-10-30 11:19:28.631 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Shutdown completed.
+2025-10-30 11:25:54.893 [main] INFO  c.ord.tutorial.TutorialApplication - Starting TutorialApplication using Java 21.0.8 with PID 3276 (D:\java_ord\location_tutorial\target\classes started by Admin in D:\java_ord\location_tutorial)
+2025-10-30 11:25:54.896 [main] INFO  c.ord.tutorial.TutorialApplication - No active profile set, falling back to 1 default profile: "default"
+2025-10-30 11:25:57.233 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-30 11:25:57.235 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-30 11:25:57.305 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-30 11:25:57.459 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Starting...
+2025-10-30 11:25:57.650 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPoolTutorial - Added connection com.mysql.cj.jdbc.ConnectionImpl@5ab5924c
+2025-10-30 11:25:57.652 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Start completed.
+2025-10-30 11:25:58.569 [main] INFO  liquibase.changelog - Reading from location_db.DATABASECHANGELOG
+2025-10-30 11:25:58.667 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-10-30 11:25:58.672 [main] INFO  liquibase.changelog - Reading from location_db.DATABASECHANGELOG
+2025-10-30 11:25:58.689 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-10-30 11:25:58.689 [main] INFO  liquibase.util - Run:                          0
+2025-10-30 11:25:58.691 [main] INFO  liquibase.util - Previously run:               8
+2025-10-30 11:25:58.691 [main] INFO  liquibase.util - Filtered out:                 0
+2025-10-30 11:25:58.691 [main] INFO  liquibase.util - -------------------------------
+2025-10-30 11:25:58.691 [main] INFO  liquibase.util - Total change sets:            8
+2025-10-30 11:25:58.693 [main] INFO  liquibase.util - Update summary generated
+2025-10-30 11:25:58.695 [main] INFO  liquibase.command - Command execution complete
+2025-10-30 11:26:00.777 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-30 11:26:03.187 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-30 11:26:03.397 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-10-30 11:26:03.952 [main] INFO  c.ord.tutorial.TutorialApplication - Started TutorialApplication in 9.917 seconds (process running for 11.053)
+2025-10-30 11:26:09.745 [http-nio-6081-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-30 11:26:10.036 [http-nio-6081-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_date,
+        u1_0.email,
+        u1_0.is_enabled,
+        u1_0.full_name,
+        u1_0.password,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2025-10-30 11:26:10.080 [http-nio-6081-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2025-10-30 11:33:51.908 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Shutdown initiated...
+2025-10-30 11:33:51.951 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Shutdown completed.
+2025-10-30 11:33:59.507 [main] INFO  c.ord.tutorial.TutorialApplication - Starting TutorialApplication using Java 21.0.8 with PID 7872 (D:\java_ord\location_tutorial\target\classes started by Admin in D:\java_ord\location_tutorial)
+2025-10-30 11:33:59.510 [main] INFO  c.ord.tutorial.TutorialApplication - No active profile set, falling back to 1 default profile: "default"
+2025-10-30 11:34:01.610 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-30 11:34:01.610 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-30 11:34:01.676 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-30 11:34:01.819 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Starting...
+2025-10-30 11:34:02.003 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPoolTutorial - Added connection com.mysql.cj.jdbc.ConnectionImpl@704d3b00
+2025-10-30 11:34:02.005 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Start completed.
+2025-10-30 11:34:02.946 [main] INFO  liquibase.changelog - Reading from location_db.DATABASECHANGELOG
+2025-10-30 11:34:03.042 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-10-30 11:34:03.045 [main] INFO  liquibase.changelog - Reading from location_db.DATABASECHANGELOG
+2025-10-30 11:34:03.058 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-10-30 11:34:03.059 [main] INFO  liquibase.util - Run:                          0
+2025-10-30 11:34:03.059 [main] INFO  liquibase.util - Previously run:               8
+2025-10-30 11:34:03.060 [main] INFO  liquibase.util - Filtered out:                 0
+2025-10-30 11:34:03.060 [main] INFO  liquibase.util - -------------------------------
+2025-10-30 11:34:03.061 [main] INFO  liquibase.util - Total change sets:            8
+2025-10-30 11:34:03.062 [main] INFO  liquibase.util - Update summary generated
+2025-10-30 11:34:03.064 [main] INFO  liquibase.command - Command execution complete
+2025-10-30 11:34:04.965 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-30 11:34:07.423 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-30 11:34:07.636 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-10-30 11:34:08.197 [main] INFO  c.ord.tutorial.TutorialApplication - Started TutorialApplication in 9.478 seconds (process running for 10.423)
+2025-10-30 11:34:17.109 [http-nio-6081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-30 11:34:37.473 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Shutdown initiated...
+2025-10-30 11:34:37.487 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Shutdown completed.
+2025-10-30 11:41:58.400 [main] INFO  c.ord.tutorial.TutorialApplication - Starting TutorialApplication using Java 21.0.8 with PID 11748 (D:\java_ord\location_tutorial\target\classes started by Admin in D:\java_ord\location_tutorial)
+2025-10-30 11:41:58.403 [main] INFO  c.ord.tutorial.TutorialApplication - No active profile set, falling back to 1 default profile: "default"
+2025-10-30 11:42:00.460 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-30 11:42:00.460 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-30 11:42:00.531 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-30 11:42:00.706 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Starting...
+2025-10-30 11:42:00.892 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPoolTutorial - Added connection com.mysql.cj.jdbc.ConnectionImpl@67e6eb52
+2025-10-30 11:42:00.894 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Start completed.
+2025-10-30 11:42:01.771 [main] INFO  liquibase.changelog - Reading from location_db.DATABASECHANGELOG
+2025-10-30 11:42:01.871 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-10-30 11:42:01.875 [main] INFO  liquibase.changelog - Reading from location_db.DATABASECHANGELOG
+2025-10-30 11:42:01.889 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-10-30 11:42:01.889 [main] INFO  liquibase.util - Run:                          0
+2025-10-30 11:42:01.890 [main] INFO  liquibase.util - Previously run:               8
+2025-10-30 11:42:01.890 [main] INFO  liquibase.util - Filtered out:                 0
+2025-10-30 11:42:01.891 [main] INFO  liquibase.util - -------------------------------
+2025-10-30 11:42:01.891 [main] INFO  liquibase.util - Total change sets:            8
+2025-10-30 11:42:01.892 [main] INFO  liquibase.util - Update summary generated
+2025-10-30 11:42:01.895 [main] INFO  liquibase.command - Command execution complete
+2025-10-30 11:42:04.004 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-30 11:42:06.367 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-30 11:42:06.596 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-10-30 11:42:07.155 [main] INFO  c.ord.tutorial.TutorialApplication - Started TutorialApplication in 9.57 seconds (process running for 10.531)
+2025-10-30 11:42:16.549 [http-nio-6081-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-30 11:43:34.512 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Shutdown initiated...
+2025-10-30 11:43:34.529 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPoolTutorial - Shutdown completed.

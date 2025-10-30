@@ -139,4 +139,6 @@
                 constraintName="uk_role_permissions_unique"/>
     </changeSet>
 
+    <include file="db/changelog/db.changelog-seed.xml" relativeToChangelogFile="false"/>
+
 </databaseChangeLog>

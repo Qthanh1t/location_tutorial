@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+       http://www.liquibase.org/xml/ns/dbchangelog
+       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <!-- ========================================================= -->
+    <!-- 8. Seed dữ liệu mẫu cho Roles, Permissions, Users -->
+    <!-- ========================================================= -->
+    <changeSet id="8-seed-roles-permissions-users" author="thanh">
+
+        <!-- === Roles === -->
+        <insert tableName="roles">
+            <column name="id" valueNumeric="1"/>
+            <column name="name" value="ADMIN"/>
+        </insert>
+        <insert tableName="roles">
+            <column name="id" valueNumeric="2"/>
+            <column name="name" value="USER"/>
+        </insert>
+
+        <!-- === Permissions (Province + Ward) === -->
+        <insert tableName="permissions">
+            <column name="permission_name" value="province.get-paged"/>
+        </insert>
+        <insert tableName="permissions">
+            <column name="permission_name" value="province.get-by-id"/>
+        </insert>
+        <insert tableName="permissions">
+            <column name="permission_name" value="province.create"/>
+        </insert>
+        <insert tableName="permissions">
+            <column name="permission_name" value="province.update"/>
+        </insert>
+        <insert tableName="permissions">
+            <column name="permission_name" value="province.remove"/>
+        </insert>
+
+        <insert tableName="permissions">
+            <column name="permission_name" value="ward.get-paged"/>
+        </insert>
+        <insert tableName="permissions">
+            <column name="permission_name" value="ward.get-by-id"/>
+        </insert>
+        <insert tableName="permissions">
+            <column name="permission_name" value="ward.create"/>
+        </insert>
+        <insert tableName="permissions">
+            <column name="permission_name" value="ward.update"/>
+        </insert>
+        <insert tableName="permissions">
+            <column name="permission_name" value="ward.remove"/>
+        </insert>
+
+        <!-- === Users mẫu === -->
+        <insert tableName="users">
+            <column name="id" valueNumeric="1"/>
+            <column name="username" value="admin"/>
+            <column name="email" value="admin@example.com"/>
+            <!-- password bcrypt: 'admin123' -->
+            <column name="password" value="$2a$12$CqkWGQDLoQX4Y5dLskJHdu5chv8S6C6qwBd/2PbvHsZVc/J9/Qqha"/>
+            <column name="full_name" value="Administrator"/>
+            <column name="is_enabled" valueBoolean="true"/>
+            <column name="created_date" valueDate="2025-01-01T00:00:00"/>
+        </insert>
+
+        <insert tableName="users">
+            <column name="id" valueNumeric="2"/>
+            <column name="username" value="user"/>
+            <column name="email" value="user@example.com"/>
+            <!-- password bcrypt: 'user123' -->
+            <column name="password" value="$2a$12$06GpUCJnM8sCRPBk02pw6uk9zmqq.EvtjaAY3ZEs6hqIAlyIXBXQC"/>
+            <column name="full_name" value="Normal User"/>
+            <column name="is_enabled" valueBoolean="true"/>
+            <column name="created_date" valueDate="2025-01-01T00:00:00"/>
+        </insert>
+
+        <!-- === Gán Role cho User === -->
+        <insert tableName="user_roles">
+            <column name="user_id" valueNumeric="1"/>
+            <column name="role_id" valueNumeric="1"/>
+        </insert>
+
+        <insert tableName="user_roles">
+            <column name="user_id" valueNumeric="2"/>
+            <column name="role_id" valueNumeric="2"/>
+        </insert>
+
+        <!-- === Gán Permissions cho Role === -->
+        <!-- Admin có tất cả quyền -->
+        <insert tableName="role_permissions">
+            <column name="role_id" valueNumeric="1"/>
+            <column name="permission_name" value="province.get-paged"/>
+        </insert>
+        <insert tableName="role_permissions">
+            <column name="role_id" valueNumeric="1"/>
+            <column name="permission_name" value="province.get-by-id"/>
+        </insert>
+        <insert tableName="role_permissions">
+            <column name="role_id" valueNumeric="1"/>
+            <column name="permission_name" value="province.create"/>
+        </insert>
+        <insert tableName="role_permissions">
+            <column name="role_id" valueNumeric="1"/>
+            <column name="permission_name" value="province.update"/>
+        </insert>
+        <insert tableName="role_permissions">
+            <column name="role_id" valueNumeric="1"/>
+            <column name="permission_name" value="province.remove"/>
+        </insert>
+
+        <insert tableName="role_permissions">
+            <column name="role_id" valueNumeric="1"/>
+            <column name="permission_name" value="ward.get-paged"/>
+        </insert>
+        <insert tableName="role_permissions">
+            <column name="role_id" valueNumeric="1"/>
+            <column name="permission_name" value="ward.get-by-id"/>
+        </insert>
+        <insert tableName="role_permissions">
+            <column name="role_id" valueNumeric="1"/>
+            <column name="permission_name" value="ward.create"/>
+        </insert>
+        <insert tableName="role_permissions">
+            <column name="role_id" valueNumeric="1"/>
+            <column name="permission_name" value="ward.update"/>
+        </insert>
+        <insert tableName="role_permissions">
+            <column name="role_id" valueNumeric="1"/>
+            <column name="permission_name" value="ward.remove"/>
+        </insert>
+
+        <!-- User chỉ có quyền đọc -->
+        <insert tableName="role_permissions">
+            <column name="role_id" valueNumeric="2"/>
+            <column name="permission_name" value="province.get-paged"/>
+        </insert>
+        <insert tableName="role_permissions">
+            <column name="role_id" valueNumeric="2"/>
+            <column name="permission_name" value="province.get-by-id"/>
+        </insert>
+        <insert tableName="role_permissions">
+            <column name="role_id" valueNumeric="2"/>
+            <column name="permission_name" value="ward.get-paged"/>
+        </insert>
+        <insert tableName="role_permissions">
+            <column name="role_id" valueNumeric="2"/>
+            <column name="permission_name" value="ward.get-by-id"/>
+        </insert>
+
+    </changeSet>
+
+
+</databaseChangeLog>

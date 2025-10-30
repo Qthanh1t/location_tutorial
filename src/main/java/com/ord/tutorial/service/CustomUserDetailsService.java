@@ -17,9 +17,9 @@ public class CustomUserDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         var userDetail = userRepository.findByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException("User not found: " + username));
-        if (userDetail.getRole() == null) {
-            userDetail.setRole(Role.ANONYMOUS);
-        }
+//        if (userDetail.getRole() == null) {
+//            userDetail.setRole(Role.ANONYMOUS);
+//        }
         return userDetail;
     }
 }
