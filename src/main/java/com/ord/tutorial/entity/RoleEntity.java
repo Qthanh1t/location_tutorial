@@ -1,15 +1,14 @@
 package com.ord.tutorial.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
 @Entity
 @Table(name = "roles")
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class RoleEntity {
@@ -19,9 +18,9 @@ public class RoleEntity {
     private Long id;
 
     @Column(unique = true, nullable = false)
-    private String name; // ví dụ: "ADMIN", "STAFF"
+    private String name; // ví dụ: "ADMIN", "USER"
 
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "role_permissions",
             joinColumns = @JoinColumn(name = "role_id"),

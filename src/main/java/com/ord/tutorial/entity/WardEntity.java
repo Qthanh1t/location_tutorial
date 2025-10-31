@@ -19,5 +19,6 @@ public class WardEntity implements BaseEntity<Integer> {
     private Integer id;
     private String code;
     private String name;
+    @Column(name = "province_code")
     private String provinceCode;
 }

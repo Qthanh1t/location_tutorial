@@ -8,7 +8,9 @@ import com.ord.tutorial.dto.user.UserCreateDto;
 import com.ord.tutorial.dto.user.UserDto;
 import com.ord.tutorial.dto.user.UserPageRequest;
 import com.ord.tutorial.dto.user.UserUpdateDto;
+import com.ord.tutorial.entity.RoleEntity;
 import com.ord.tutorial.entity.User;
+import com.ord.tutorial.repository.RoleRepository;
 import com.ord.tutorial.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.data.jpa.domain.Specification;
@@ -17,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @RestController
 @AllArgsConstructor
@@ -31,6 +34,7 @@ public class UserApiResource extends CrudAppService<
         UserUpdateDto> {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
+    private final RoleRepository roleRepository;
 
     @Override
     protected Specification<User> buildSpecificationForPaging(UserPageRequest pageRequest) {
@@ -49,11 +53,19 @@ public class UserApiResource extends CrudAppService<
         if (userRepository.existsByEmail(userDto.getEmail())) {
             throwBusiness("Email đã được sử dụng");
         }
+        List<RoleEntity> roles = roleRepository.findByNameIn(userDto.getRoles());
+        if (roles.isEmpty()) {
+            throwBusiness("Không tìm thấy role nào hợp lệ trong " + roles);
+        }
     }
 
     @Override
     protected User convertCreateInputToEntity(UserCreateDto userCreateDto) {
         var user = super.convertCreateInputToEntity(userCreateDto);
+        if (userCreateDto.getRoles() != null && !userCreateDto.getRoles().isEmpty()) {
+            List<RoleEntity> roles = roleRepository.findByNameIn(userCreateDto.getRoles());
+            user.setRoles(roles);
+        }
         user.setPassword(passwordEncoder.encode(userCreateDto.getPassword()));
         user.setEnabled(Boolean.TRUE);
         user.setCreatedDate(LocalDateTime.now());
