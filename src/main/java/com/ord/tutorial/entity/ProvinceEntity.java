@@ -16,7 +16,7 @@ import java.io.Serializable;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProvinceEntity implements Serializable, BaseEntity<Integer> {
+public class ProvinceEntity extends AuditableEntity<Integer> implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
     @Id

@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.time.Instant;
 
 @Data
 @Builder
@@ -29,4 +30,24 @@ public class WardDto extends EncodedIdDto<Integer> implements Serializable {
     @Size(max = 20)
     private String provinceCode;
     private String provinceName;
+    private String createdBy;
+    private Instant createdDate;
+    private String lastModifiedBy;
+    private Instant lastModifiedDate;
+
+    public WardDto(
+            Integer id, String code, String name, String provinceCode, String provinceName,
+            String createdBy, Instant createdDate, String lastModifiedBy, Instant lastModifiedDate) {
+
+        this.setId(id);
+
+        this.code = code;
+        this.name = name;
+        this.provinceCode = provinceCode;
+        this.provinceName = provinceName;
+        this.createdBy = createdBy;
+        this.createdDate = createdDate;
+        this.lastModifiedBy = lastModifiedBy;
+        this.lastModifiedDate = lastModifiedDate;
+    }
 }

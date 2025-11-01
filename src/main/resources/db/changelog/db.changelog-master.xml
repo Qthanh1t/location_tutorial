@@ -15,6 +15,20 @@
                 <constraints nullable="false" unique="true"/>
             </column>
             <column name="name" type="VARCHAR(255)"/>
+
+            <column name="created_by" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_date" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+
         </createTable>
     </changeSet>
 
@@ -30,6 +44,20 @@
             <column name="province_code" type="VARCHAR(50)">
                 <constraints nullable="false"/>
             </column>
+
+            <column name="created_by" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_date" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+
         </createTable>
 
         <!-- Optionally add FK from wards.province_code to provinces.code -->

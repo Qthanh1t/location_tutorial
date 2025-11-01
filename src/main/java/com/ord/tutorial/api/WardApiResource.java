@@ -2,6 +2,7 @@ package com.ord.tutorial.api;
 
 import com.ord.core.crud.repository.OrdEntityRepository;
 import com.ord.core.crud.service.SimpleCrudAppService;
+import com.ord.tutorial.dao.WardDao;
 import com.ord.tutorial.dto.master_data.WardDto;
 import com.ord.tutorial.dto.master_data.WardPagedInput;
 import com.ord.tutorial.entity.WardEntity;
@@ -13,6 +14,8 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api/wards")
@@ -23,18 +26,28 @@ public class WardApiResource extends SimpleCrudAppService<
         WardPagedInput> {
     private final ProvinceRepository provinceRepository;
     private final WardRepository wardRepository;
+    private final WardDao wardDao;
 
     @Override
     protected OrdEntityRepository<WardEntity, Integer> getRepository() {
         return wardRepository;
     }
 
+//    @Override
+//    protected Specification<WardEntity> buildSpecificationForPaging(WardPagedInput input) {
+//        return SpecificationBuilder.<WardEntity>builder()
+//                .withEqIfNotNull("provinceCode", input.getProvinceCode())
+//                .withLikeFts(input.getFts(), "code", "name")
+//                .build();
+//    }
     @Override
-    protected Specification<WardEntity> buildSpecificationForPaging(WardPagedInput input) {
-        return SpecificationBuilder.<WardEntity>builder()
-                .withEqIfNotNull("provinceCode", input.getProvinceCode())
-                .withLikeFts(input.getFts(), "code", "name")
-                .build();
+    protected Integer getTotalCount(WardPagedInput input) {
+        return wardDao.getPageCount(input);
+    }
+
+    @Override
+    protected List<WardDto> fetchPagedItems(WardPagedInput input) {
+        return wardDao.getPageItems(input);
     }
 
     @Override
