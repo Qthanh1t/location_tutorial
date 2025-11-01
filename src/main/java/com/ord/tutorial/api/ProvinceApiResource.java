@@ -30,17 +30,32 @@ public class ProvinceApiResource extends SimpleCrudAppService<
     private final WardRepository wardRepository;
     private final ProvinceDao provinceDao;
 
-//    @Override
-//    protected String getGetPagedListPolicy() {
-//        return getPolicyForAction("paged");
-//    }
+    @Override
+    protected String getGetPagedListPolicy() {
+        return getPolicyForAction("get-paged");
+    }
 
-//    @Override
-//    protected Specification<ProvinceEntity> buildSpecificationForPaging(PagedResultRequestDto pagedResultRequestDto) {
-//        return SpecificationBuilder.<ProvinceEntity>builder()
-//                .withLikeFts(pagedResultRequestDto.getFts(), "code", "name")
-//                .build();
-//    }
+    @Override
+    protected String getCreatePolicy() {
+        return getPolicyForAction("create");
+    }
+
+    @Override
+    protected String getUpdatePolicy() {
+        return getPolicyForAction("update");
+    }
+
+    @Override
+    protected String getRemovePolicy() {
+        return getPolicyForAction("remove");
+    }
+
+    @Override
+    protected Specification<ProvinceEntity> buildSpecificationForPaging(PagedResultRequestDto pagedResultRequestDto) {
+        return SpecificationBuilder.<ProvinceEntity>builder()
+                .withLikeFts(pagedResultRequestDto.getFts(), "code", "name")
+                .build();
+    }
         @Override
     protected Integer getTotalCount(PagedResultRequestDto pagedResultRequestDto) {
         return provinceDao.getPageCount(pagedResultRequestDto);

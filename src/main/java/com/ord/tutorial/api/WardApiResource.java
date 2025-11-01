@@ -38,6 +38,26 @@ public class WardApiResource extends SimpleCrudAppService<
     }
 
     @Override
+    protected String getGetPagedListPolicy() {
+        return getPolicyForAction("get-paged");
+    }
+
+    @Override
+    protected String getCreatePolicy() {
+        return getPolicyForAction("create");
+    }
+
+    @Override
+    protected String getUpdatePolicy() {
+        return getPolicyForAction("update");
+    }
+
+    @Override
+    protected String getRemovePolicy() {
+        return getPolicyForAction("remove");
+    }
+
+    @Override
     protected void validationBeforeCreate(WardDto wardDto) {
         checkProvinceCode(wardDto.getProvinceCode());
         if (wardRepository.existsByCode(wardDto.getCode())) {
