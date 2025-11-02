@@ -9,6 +9,7 @@ import com.ord.tutorial.dto.master_data.ProvinceDto;
 import com.ord.tutorial.entity.ProvinceEntity;
 import com.ord.tutorial.repository.ProvinceRepository;
 import com.ord.tutorial.repository.WardRepository;
+import com.ord.tutorial.service.DropdownService;
 import lombok.AllArgsConstructor;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -29,6 +30,7 @@ public class ProvinceApiResource extends SimpleCrudAppService<
     private final ProvinceRepository provinceRepository;
     private final WardRepository wardRepository;
     private final ProvinceDao provinceDao;
+    private final DropdownService dropdownService;
 
     @Override
     protected String getGetPagedListPolicy() {
@@ -85,6 +87,22 @@ public class ProvinceApiResource extends SimpleCrudAppService<
         if (wardRepository.existsByProvinceCode(entityToRemove.getCode())) {
             throwBusiness(getMessage("province.error.inUse"));
         }
+    }
+
+    // xoa cache khi them, sua, xoa
+    @Override
+    protected void handleAfterCreate(ProvinceEntity createdEntity, ProvinceDto createInput) {
+        dropdownService.clearProvincesDropdownCache();
+    }
+
+    @Override
+    protected void handleAfterUpdate(ProvinceEntity updatedEntity, ProvinceDto updateInput) {
+        dropdownService.clearProvincesDropdownCache();
+    }
+
+    @Override
+    protected void handleAfterRemove(ProvinceEntity removedEntity) {
+        dropdownService.clearProvincesDropdownCache();
     }
 
     @Override
