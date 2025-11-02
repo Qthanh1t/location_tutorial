@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.stereotype.Component;
+import com.ord.tutorial.service.AppMessageService;
 
 import java.io.IOException;
 
@@ -17,6 +18,7 @@ import java.io.IOException;
 public class CustomAccessDeniedHandler implements AccessDeniedHandler {
 
     private final ObjectMapper objectMapper;
+    private final AppMessageService messageService;
 
     @Override
     public void handle(HttpServletRequest request,
@@ -27,7 +29,7 @@ public class CustomAccessDeniedHandler implements AccessDeniedHandler {
         response.setStatus(HttpServletResponse.SC_FORBIDDEN);
 
         CommonResultDto<?> result = CommonResultDto.fail(CommonResultCode.UNAUTHORIZED,
-                "Bạn không có quyền truy cập tài nguyên này");
+                messageService.getMessage("error.accessDenied"));
 
         response.getWriter().write(objectMapper.writeValueAsString(result));
     }

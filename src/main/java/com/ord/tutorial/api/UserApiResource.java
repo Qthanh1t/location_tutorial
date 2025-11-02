@@ -48,10 +48,10 @@ public class UserApiResource extends CrudAppService<
     @Override
     protected void validationBeforeCreate(UserCreateDto userDto) {
         if (userRepository.existsByUsername(userDto.getUsername())) {
-            throwBusiness("Username đã tồn tại");
+            throwBusiness(getMessage("user.error.usernameExists"));
         }
         if (userRepository.existsByEmail(userDto.getEmail())) {
-            throwBusiness("Email đã được sử dụng");
+            throwBusiness(getMessage("user.error.emailExists"));
         }
         List<RoleEntity> roles = roleRepository.findByNameIn(userDto.getRoles());
         if (roles.isEmpty()) {
@@ -75,7 +75,7 @@ public class UserApiResource extends CrudAppService<
     @Override
     protected void validationBeforeUpdate(UserUpdateDto userDto, User entityToUpdate) {
         if (userRepository.existsByEmailAndIdNot(userDto.getEmail(), entityToUpdate.getId())) {
-            throwBusiness("Email đã được sử dụng");
+            throwBusiness(getMessage("user.error.emailExists"));
         }
     }
 

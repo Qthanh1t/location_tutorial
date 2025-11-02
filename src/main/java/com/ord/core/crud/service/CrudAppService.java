@@ -10,6 +10,7 @@ import com.ord.core.crud.repository.OrdEntityRepository;
 import com.ord.core.exception.NotFoundException;
 import com.ord.core.exception.OrdBusinessException;
 import com.ord.core.security.IdCodec;
+import com.ord.tutorial.service.AppMessageService;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
@@ -62,6 +63,10 @@ public abstract class CrudAppService<
 
     @Autowired
     protected IdCodec idCodec;
+
+    @Autowired
+    protected AppMessageService messageService;
+
     // Thêm vào CrudAppService
     private static final ConcurrentHashMap<Class<?>, Class<?>[]> GENERIC_CACHE = new ConcurrentHashMap<>();
 
@@ -277,7 +282,7 @@ public abstract class CrudAppService<
 
         return CommonResultDto.success(
                 convertCreatedEntityToDto(newEntity, createInput),
-                "CreateSuccessfully"
+                messageService.getMessage("message.createSuccess")
         );
     }
 
@@ -326,7 +331,7 @@ public abstract class CrudAppService<
 
         return CommonResultDto.success(
                 convertUpdatedEntityToDto(entityToUpdate, updateInput),
-                "UpdateSuccessfully"
+                messageService.getMessage("message.updateSuccess")
         );
     }
 
@@ -360,7 +365,7 @@ public abstract class CrudAppService<
 
         return CommonResultDto.success(
                 convertRemovedEntityToDto(entityToRemove),
-                "RemoveSuccessfully"
+                messageService.getMessage("message.removeSuccess")
         );
     }
 
@@ -461,16 +466,30 @@ public abstract class CrudAppService<
     protected void validationBeforeRemove(TEntity entityToRemove) {
     }
 
+    /**
+     * Hàm trợ giúp mới để các lớp con có thể dễ dàng lấy thông báo
+     */
+    protected String getMessage(String key) {
+        return messageService.getMessage(key);
+    }
+
+    /**
+     * Hàm trợ giúp mới để các lớp con có thể dễ dàng lấy thông báo với tham số
+     */
+    protected String getMessage(String key, Object... args) {
+        return messageService.getMessage(key, args);
+    }
+
     protected void hasRole(String role) {
         var authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication == null || !authentication.isAuthenticated()) {
-            throw new AccessDeniedException("Người dùng không có quyền truy cập ");
+            throw new AccessDeniedException(getMessage("error.accessDenied")); 
         }
         boolean hasRole = authentication.getAuthorities().stream()
                 .map(GrantedAuthority::getAuthority)
                 .anyMatch(r -> r.equalsIgnoreCase(role));
         if (!hasRole) {
-            throw new AccessDeniedException("Người dùng không có quyền truy cập ");
+            throw new AccessDeniedException(getMessage("error.accessDenied"));
         }
     }
     // ==================== Mapping Methods ====================

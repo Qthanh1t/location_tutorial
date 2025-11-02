@@ -69,21 +69,21 @@ public class ProvinceApiResource extends SimpleCrudAppService<
     @Override
     protected void validationBeforeCreate(ProvinceDto provinceDto) {
         if (provinceRepository.existsByCode(provinceDto.getCode())) {
-            throwBusiness("Mã tỉnh đã tồn tại");
+            throwBusiness(getMessage("province.error.codeExists"));
         }
     }
 
     @Override
     protected void validationBeforeUpdate(ProvinceDto provinceDto, ProvinceEntity entityToUpdate) {
         if (provinceRepository.existsByCodeAndIdNot(provinceDto.getCode(), entityToUpdate.getId())) {
-            throwBusiness("Mã tỉnh đã tồn tại trong hệ thống");
+            throwBusiness(getMessage("province.error.codeExists"));
         }
     }
 
     @Override
     protected void validationBeforeRemove(ProvinceEntity entityToRemove) {
         if (wardRepository.existsByProvinceCode(entityToRemove.getCode())) {
-            throwBusiness("Tỉnh đã được sử dụng, không thể xóa");
+            throwBusiness(getMessage("province.error.inUse"));
         }
     }
 

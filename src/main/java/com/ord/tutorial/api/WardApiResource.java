@@ -74,7 +74,7 @@ public class WardApiResource extends SimpleCrudAppService<
     protected void validationBeforeCreate(WardDto wardDto) {
         checkProvinceCode(wardDto.getProvinceCode());
         if (wardRepository.existsByCode(wardDto.getCode())) {
-            throwBusiness("Mã xã đã tồn tại");
+            throwBusiness(getMessage("ward.error.codeExists"));
         }
         super.validationBeforeCreate(wardDto);
     }
@@ -83,14 +83,14 @@ public class WardApiResource extends SimpleCrudAppService<
     protected void validationBeforeUpdate(WardDto wardDto, WardEntity entityToUpdate) {
         checkProvinceCode(wardDto.getProvinceCode());
         if (wardRepository.existsByCodeAndIdNot(wardDto.getCode(), entityToUpdate.getId())) {
-            throwBusiness("Mã xã đã tồn tại trong hệ thống");
+            throwBusiness(getMessage("ward.error.codeExists"));
         }
         super.validationBeforeUpdate(wardDto, entityToUpdate);
     }
 
     private void checkProvinceCode(String provinceCode) {
         if (!provinceRepository.existsByCode(provinceCode)) {
-            throwBusiness("Mã tỉnh không tồn tại");
+            throwBusiness(getMessage("province.error.codeNotFound"));
         }
     }
 

@@ -3,6 +3,7 @@ package com.ord.core.security;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ord.core.crud.dto.CommonResultDto;
 import com.ord.core.crud.enums.CommonResultCode;
+import com.ord.tutorial.service.AppMessageService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
@@ -17,7 +18,7 @@ import java.io.IOException;
 public class CustomAuthenticationEntryPoint implements AuthenticationEntryPoint {
 
     private final ObjectMapper objectMapper;
-
+    private final AppMessageService appMessageService;
     @Override
     public void commence(HttpServletRequest request,
                          HttpServletResponse response,
@@ -27,7 +28,7 @@ public class CustomAuthenticationEntryPoint implements AuthenticationEntryPoint 
         response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 
         CommonResultDto<?> result = CommonResultDto.fail(CommonResultCode.UNAUTHORIZED,
-                "Bạn chưa đăng nhập");
+                appMessageService.getMessage("error.notLogin"));
         response.getWriter().write(objectMapper.writeValueAsString(result));
     }
 }
