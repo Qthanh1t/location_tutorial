@@ -24,5 +24,81 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
 
+  # Zookeeper
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.0.1
+    container_name: zookeeper
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - "2181:2181"
+
+  # Kafka
+  kafka:
+    image: confluentinc/cp-kafka:7.0.1
+    container_name: kafka
+    depends_on:
+      - zookeeper
+    ports:
+      # Cổng 9092: Mở cho ứng dụng Spring Boot (trên localhost) kết nối vào
+      - "9092:9092"
+      # Cổng 29092: Dùng cho các dịch vụ khác (Logstash) bên trong mạng Docker
+      - "29092:29092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
+      # Cấu hình listener
+      KAFKA_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      # Tự động tạo topic
+      KAFKA_CREATE_TOPICS: "audit-logs:1:1"
+
+  # Elasticsearch
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.15.2
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+      # Giới hạn RAM cho máy dev
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ports:
+      - "9200:9200"
+    volumes:
+      - elastic_data:/usr/share/elasticsearch/data
+
+  #  Logstash
+  logstash:
+    image: docker.elastic.co/logstash/logstash:7.15.2
+    container_name: logstash
+    depends_on:
+      - elasticsearch
+      - kafka
+    ports:
+      - "5044:5044"
+      - "9600:9600"
+    volumes:
+      # Mount file cấu hình
+      - ./logstash/pipeline:/usr/share/logstash/pipeline
+    environment:
+      LS_JAVA_OPTS: "-Xms256m -Xmx256m"
+
+  # Kibana:
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.15.2
+    container_name: kibana
+    depends_on:
+      - elasticsearch
+    ports:
+      - "5601:5601"
+    environment:
+      ELASTICSEARCH_HOSTS: http://elasticsearch:9200
+
 volumes:
   mysql_data:
+
+  elastic_data:
+    driver: local
