@@ -21,12 +21,12 @@ public class AuditLogService {
      * Gửi một đối tượng AuditLogDto đến Kafka.
      * KafkaTemplate mặc định là bất đồng bộ (async).
      *
-     * @param log Đối tượng AuditLogDto
+     * @param logDto Đối tượng AuditLogDto
      */
-    public void send(AuditLogDto log) {
+    public void send(AuditLogDto logDto) {
         try {
             // Gửi đi và không chờ kết quả
-            kafkaTemplate.send(KAFKA_TOPIC, log);
+            kafkaTemplate.send(KAFKA_TOPIC, logDto);
         } catch (Exception e) {
             // Log lỗi nếu không gửi được, nhưng không ném exception
             // để tránh làm hỏng luồng request chính
